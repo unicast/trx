@@ -27,6 +27,10 @@ install:	rx tx
 		$(INSTALL) -d $(DESTDIR)$(BINDIR)
 		$(INSTALL) rx tx $(DESTDIR)$(BINDIR)
 
+install-deb-deps:
+		apt-get udpate
+		apt-get install -y build-essential libasound2-dev libopus-dev libortp-dev
+
 dist:
 		mkdir -p dist
 		V=$$(git describe) && \
